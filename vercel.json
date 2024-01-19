@@ -6,8 +6,9 @@
     },
     "routes": [
       { "src": "/fetch_keyword_ranking",  "dest": "/api/fetch_keyword_ranking.php" },
-      { "src": "/styles/(.*)", "dest": "/api/styles/$1" },
-      { "src": "/images/(.*)", "dest": "/api/images/$1" },
+      { "src": "/styles/index.css", "dest": "/api/styles/index.css" },
+      { "src": "/styles/reset.css", "dest": "/api/styles/reset.css" },
+      { "src": "/images/banner.png", "dest": "/api/images/banner.png" },
       { "src": "/(.*)",  "dest": "/api/index.php" }
     ]
   }
