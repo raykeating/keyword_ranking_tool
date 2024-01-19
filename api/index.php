@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <img src="images/banner.png" alt="" class="right-banner-image">
+        <img src="https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=2070" alt="" class="right-banner-image" style="max-width: 600px;">
     </div>
 
     <script>
