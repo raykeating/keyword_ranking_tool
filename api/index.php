@@ -20,6 +20,12 @@
         <input type="search" name="keyword" id="keyword">
         <label for="website">Website</label>
         <input type="search" name="website" id="website">
+        <!-- amount of results to search through -->
+        <label for="amount">Amount</label>
+        <input type="search" name="amount" id="amount">
+        <small>
+            <p>Amount of results to search through. Default is 10.</p>
+        </small>
         <button onclick="getSearchResults()">Submit</button>
 
     <div id="loading-indicator">Loading...</div>
@@ -30,7 +36,7 @@
 
     <script>
         function getSearchResults() {
-            var apiEndpoint = '/php-crash/fetch_keyword_ranking.php?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
+            var apiEndpoint = '/fetch_keyword_ranking?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
 
             // Display loading indicator
             $('#loading-indicator').show();
