@@ -15,7 +15,7 @@ function fetch_results(string $keyword)
     $proxy_user = getenv('PROXY_USER');
 
     $sanitized_keyword = str_replace(' ', '+', $keyword);
-    $url = "https://www.google.com/search?q=$sanitized_keyword&brd_json=1";
+    $url = "https://www.google.com/search?q=$sanitized_keyword&brd_json=1&num=50";
 
     $ch = curl_init($url);
 
@@ -72,7 +72,7 @@ if (isset($_GET['keyword']) and isset($_GET['website'])) {
     [$rank, $results] = fetch_keyword_ranking($keyword, $website_url);
 
     if ($rank === -1) {
-        echo "<p class='summary-text'><strong>$website_url</strong> is not ranked in the top 10 results for the keyword <strong>$keyword</strong></p>";
+        echo "<p class='summary-text'><strong>$website_url</strong> is not ranked in the top 50 results for the keyword <strong>$keyword</strong></p>";
         echo "<ul>";
         foreach ($results as $result) {
             echo "<li class='result-preview'>
