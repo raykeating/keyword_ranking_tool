@@ -1,7 +1,11 @@
 {
-	"functions": {
-		"api/*.php": {
-			"runtime": "vercel-php@0.6.0"
-		}
-	}
-}
+    "functions": {
+      "src/*.php": {
+        "runtime": "vercel-php@0.6.0"
+      }
+    },
+    "routes": [
+      { "src": "/(.*)",  "dest": "/src/index.php" },
+      { "src": "/fetch_keyword_ranking",  "dest": "/src/fetch_keyword_ranking.php" }
+    ]
+  }
