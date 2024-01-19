@@ -1,0 +1,150 @@
+* {
+    font-family: "Inter", sans-serif;
+}
+
+.light-header {
+	font-weight: 300;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.search-box {
+	padding: 2.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+	background-color: white;
+	display: flex;
+	gap: 1rem;
+	width: fit-content;
+}
+
+.input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input-container small {
+	font-size: 0.8rem;
+	color: #929292;
+}
+
+.search-button-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+button {
+	border: none;
+	border-radius: 0.3rem;
+	padding: 0.5rem 1rem;
+	background-color: #000000;
+	color: white;
+	cursor: pointer;
+}
+
+input {
+	border: 1px solid #929292;
+	border-radius: 0.2rem;
+	padding: 0.5rem;
+}
+
+label {
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.result-preview {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	position: relative;
+}
+
+.result-preview .title {
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #414CB6;
+}
+
+.result-preview a {
+	color: #2F9133;
+}
+
+.result-preview span {
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.summary-text {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	color: black;
+	margin: 2rem 0;
+}
+
+.app-wrapper {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.app-wrapper .app {
+	width: 100%;
+	padding: 3rem;
+	overflow-y: auto;
+}
+
+.app-wrapper img {
+	flex-basis: 1;
+	height: 100%;
+	object-fit: cover;
+}
+
+:focus {
+	outline: 1px solid #757575;
+}
+
+ul { 
+	padding-left: 0;
+}
+
+#loading-indicator {
+	display: none;
+}
+#errormessage1,
+#errormessage2,
+#errormessage3 {
+	display: none;
+}
+
+.info-text {
+	font-size: 1.3rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.loading-spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.loading-spinner {
+	display: inline;
+	height: 1rem;
+	width: 1rem;
+	animation: spin 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+

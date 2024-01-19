@@ -54,12 +54,13 @@ function check_rank($results, string $website_url)
         }
     }
 
-    // If the website is not found in the organic results, return null
-    return null;
+    // If the website is not found in the top 10 results, return -1
+    return -1;
 }
 
 // This function will check if a string is contained in another string
-function is_string_contained(string $substring, string $string) {
+function is_string_contained(string $substring, string $string)
+{
     // Use stripos for a case-insensitive check
     return stripos($string, $substring) !== false;
 }
@@ -70,32 +71,27 @@ if (isset($_GET['keyword']) and isset($_GET['website'])) {
     $website_url = $_GET['website'];
     [$rank, $results] = fetch_keyword_ranking($keyword, $website_url);
 
-    // validate the keyword and website
-    if (empty($keyword)) {
-        echo "<p>Please provide a keyword</p>";
-    } else if (empty($website_url)) {
-        echo "<p>Please provide a website url</p>";
-    } else if (str_contains($website_url, ".") === false) {
-        echo "<p>Website url is invalid</p>";
-    } else if (is_null($rank)) {
-        echo "<p>Sorry, this website is not in the top 10 results for this keyword</p>";
-        // Output the results
-        echo "<p>Keyword: $keyword</p>";
-        echo "<p>Website: $website_url</p>";
-        echo "<p>Results:</p>";
+    if ($rank === -1) {
+        echo "<p class='summary-text'><strong>$website_url</strong> is not ranked in the top 10 results for the keyword <strong>$keyword</strong></p>";
         echo "<ul>";
         foreach ($results as $result) {
-            echo "<li><a href='{$result['link']}'>{$result['title']}</a></li>";
+            echo "<li class='result-preview'>
+                    <p class='title'>{$result['title']}</p>
+                    <a href='{$result['link']}'>{$result['link']}</a>
+                    <p class='snippet'>{$result['description']}</p>
+                </li>";
         }
+        echo "</ul>";
     } else {
         // Output the results
-        echo "<p>Keyword: $keyword</p>";
-        echo "<p>Website: $website_url</p>";
-        echo "<p>Rank: $rank</p>";
-        echo "<p>Results:</p>";
+        echo "<p class='summary-text'><strong>$website_url</strong> is ranked <strong>#$rank</strong> for the keyword <strong>$keyword</strong></p>";
         echo "<ul>";
         foreach ($results as $result) {
-            echo "<li><a href='{$result['link']}'>{$result['title']}</a></li>";
+            echo "<li class='result-preview'>
+                <p class='title'>{$result['title']}</p>
+                <a href='{$result['link']}'>{$result['link']}</a>
+                <p class='snippet'>{$result['description']}</p>
+            </li>";
         }
         echo "</ul>";
     }
