@@ -77,7 +77,7 @@ if (isset($_GET['keyword']) and isset($_GET['website'])) {
         foreach ($results as $result) {
             echo "<li class='result-preview'>
                     <p class='title'>{$result['title']}</p>
-                    <a href='{$result['link']}'>{$result['link']}</a>
+                    <a href='{$result['link']}' target='_blank'>{$result['link']}</a>
                     <p class='snippet'>{$result['description']}</p>
                 </li>";
         }
@@ -89,7 +89,7 @@ if (isset($_GET['keyword']) and isset($_GET['website'])) {
         foreach ($results as $result) {
             echo "<li class='result-preview'>
                 <p class='title'>{$result['title']}</p>
-                <a href='{$result['link']}'>{$result['link']}</a>
+                <a href='{$result['link']}' target='_blank'>{$result['link']}</a>
                 <p class='snippet'>{$result['description']}</p>
             </li>";
         }
