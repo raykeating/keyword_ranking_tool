@@ -101,9 +101,11 @@
                 return;
             }
 
-            var apiEndpoint = 'fetch_keyword_ranking.php?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
-            // comment back in before deploying to production
-            // var apiEndpoint = 'fetch_keyword_ranking?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
+            // testing endpoint
+            // var apiEndpoint = 'fetch_keyword_ranking.php?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
+
+            // production endpoint
+            var apiEndpoint = 'fetch_keyword_ranking?keyword=' + $('#keyword').val() + '&website=' + $('#website').val();
 
             // Display loading indicator
             $('#loading-indicator').show();
@@ -153,10 +155,6 @@
             return true;
         }
     </script>
-</body>
-</html>
-
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 </html>

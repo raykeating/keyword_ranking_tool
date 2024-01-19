@@ -1,12 +1,15 @@
 {
-    "functions": {
-      "api/*.php": {
-        "runtime": "vercel-php@0.6.0"
-      }
-    },
-    "routes": [
-      { "src": "/fetch_keyword_ranking",  "dest": "/api/fetch_keyword_ranking.php" },
-      { "src": "/(.*)",  "dest": "/api/index.php" }
-      
-    ]
-  }
+	"functions": {
+		"api/*.php": {
+			"runtime": "vercel-php@0.6.0"
+		}
+	},
+	"routes": [
+    { "src": "/(.*)", "dest": "/api/index.php" },
+		{ "src": "/styles/(.*)", "dest": "/api/styles/$1" },
+		{
+			"src": "/fetch_keyword_ranking",
+			"dest": "/api/fetch_keyword_ranking.php"
+		}
+	]
+}
