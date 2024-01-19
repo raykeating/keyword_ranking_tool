@@ -1,9 +1,9 @@
 <?php
 // This function returns the rank of the website in the organic results, and the organic results as an array of objects
 // It's powered by https://brightdata.com/
-function fetch_keyword_ranking(string $keyword, string $website_url, $count = 50)
+function fetch_keyword_ranking(string $keyword, string $website_url)
 {
-    $results = fetch_results($keyword, $count);
+    $results = fetch_results($keyword);
     $rank = check_rank($results, $website_url);
     return [$rank, $results];
 }
