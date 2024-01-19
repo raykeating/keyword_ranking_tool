@@ -6,9 +6,6 @@
     },
     "routes": [
       { "src": "/fetch_keyword_ranking",  "dest": "/api/fetch_keyword_ranking.php" },
-      { "src": "/styles/index.css", "dest": "/api/styles/index.css" },
-      { "src": "/styles/reset.css", "dest": "/api/styles/reset.css" },
-      { "src": "/images/banner.png", "dest": "/api/images/banner.png" },
       { "src": "/(.*)",  "dest": "/api/index.php" }
     ]
   }
