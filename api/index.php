@@ -23,16 +23,13 @@
         <!-- amount of results to search through -->
         <label for="amount">Amount</label>
         <input type="search" name="amount" id="amount">
-        <small>
-            <p>Amount of results to search through. Default is 10.</p>
-        </small>
         <button onclick="getSearchResults()">Submit</button>
 
-    <div id="loading-indicator">Loading...</div>
-    <div id="result-container">
-        <h2>API Response:</h2>
-        <div id="results"></div>
-    </div>
+        <div id="loading-indicator">Loading...</div>
+        <div id="result-container">
+            <h2>API Response:</h2>
+            <div id="results"></div>
+        </div>
 
     <script>
         function getSearchResults() {
